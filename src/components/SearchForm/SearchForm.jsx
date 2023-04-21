@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import css from './SearchForm.module.scss';
 import PropTypes from 'prop-types';
+import css from './SearchForm.module.css';
 
 class SearchForm extends Component {
   state = {

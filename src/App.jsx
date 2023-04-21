@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import css from './App.module.css';
-import { searchImages } from './api';
+import { searchImages } from './api/API';
 import Searchbar from './components/Searchbar';
 import SearchForm from './components/SearchForm';
 import ImageGallery from './components/ImageGallery';
