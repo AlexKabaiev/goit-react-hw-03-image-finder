@@ -1,37 +1,19 @@
 import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
-const ImageGalleryItem = ({ hits, clicked }) => {
-  if (hits.length) {
-    const items = hits.map(({ id, webformatURL, largeImageURL }) => {
-      return (
-        <li
-          onClick={() => clicked(largeImageURL)}
-          className={css.item}
-          key={id}
-        >
-          <img
-            className={css.itemImage}
-            alt="img"
-            src={webformatURL}
-            srcbig={largeImageURL}
-          />
-        </li>
-      );
-    });
-    return items;
-  }
+const ImageGalleryItem = ({ src, alt, largeImageURL, openModal }) => {
+  return (
+    <li className={css.item} onClick={() => openModal(largeImageURL)}>
+      <img src={src} alt={alt} className={css.itemImage } />
+    </li>
+  );
 };
 
 ImageGalleryItem.propTypes = {
-  hits: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      webformatURL: PropTypes.string.isRequired,
-      largeImageURL: PropTypes.string.isRequired,
-    })
-  ),
-  clicked: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export default ImageGalleryItem;
