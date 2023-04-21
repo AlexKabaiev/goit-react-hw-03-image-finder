@@ -16,16 +16,25 @@ const ImageGallery = ({ images, openModal }) => (
   </ul>
 );
 
+// ImageGallery.propTypes = {
+//   images: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//       webformatURL: PropTypes.string.isRequired,
+//       tags: PropTypes.string.isRequired,
+//       largeImageURL: PropTypes.string.isRequired,
+//     })
+//   ),
+//   openModal: PropTypes.func.isRequired,
+// };
+
 ImageGallery.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      webformatURL: PropTypes.string.isRequired,
-      tags: PropTypes.string.isRequired,
-      largeImageURL: PropTypes.string.isRequired,
-    })
-  ),
-  openModal: PropTypes.func.isRequired,
+  images: PropTypes.array,
+  id: PropTypes.number,
+  webformatURL: PropTypes.string,
+  tags: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  openModal: PropTypes.func,
 };
 
 export default ImageGallery;
