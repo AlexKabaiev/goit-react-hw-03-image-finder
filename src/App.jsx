@@ -22,8 +22,6 @@ class App extends Component {
   };
 
   componentDidUpdate(_, prevState) {
-    console.log(prevState.page);
-    console.log(this.state.page);
     const { searchQuery, page } = this.state;
     if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
       this.getImages(searchQuery, page);
@@ -37,7 +35,6 @@ class App extends Component {
     }
     try {
       const { hits, totalHits } = await fetchImages(query, page);
-      console.log(hits, totalHits);
       this.setState(prevState => ({
         images: [...prevState.images, ...hits],
         loadMore: this.state.page < Math.ceil(totalHits / this.state.per_page),
@@ -72,7 +69,6 @@ class App extends Component {
   };
 
   openModal = largeImageURL => {
-    console.log(largeImageURL);
     this.setState({
       showModal: true,
       largeImageURL: largeImageURL,
