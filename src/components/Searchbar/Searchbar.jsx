@@ -9,8 +9,6 @@ class Searchbar extends Component {
   };
 
   handleChange = e => {
-    // const { name, value } = e.currentTarget;
-    // this.setState({ [name]: value });
     this.setState({ searchQuery: e.currentTarget.value.toLowerCase() });
   };
 
@@ -50,7 +48,7 @@ class Searchbar extends Component {
 }
 
 Searchbar.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Searchbar;
